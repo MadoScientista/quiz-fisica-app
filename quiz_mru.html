@@ -10,6 +10,7 @@
     <title>Física Quiz</title>
 </head>
 <body>
+    <!--NavBar-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Física Quiz</a>
@@ -43,5 +44,142 @@
             </div>
         </div>
     </nav>
+
+    <!-- Main -->
+    <main class="container-fluid p-5">
+        <div class="text-center">
+            <div class="h1">Quiz MRU</div>
+            <p>Quiz sobre cuerpos en movimiento con velocidad constante</p>
+        </div>
+        
+
+        <!--Quiz-->
+        <div class="container mt-5">
+            <!-- Quiz -->
+            <div id="quiz" class="container">
+
+                <!-- Información del quiz -->
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span id="pregunta-numero">Pregunta 1 de 5</span>
+                    <span id="puntaje">Puntaje: 0</span>
+                    <span id="tiempo">Tiempo: 30 s</span>
+                </div>
+                
+                <!-- Barra de progreso -->
+                <div class="progress mb-4" role="progressbar" aria-label="Progreso del quiz">
+                    <div id="progreso" class="progress-bar" style="width: 20%"></div>
+                </div>
+
+                <!-- Pregunta -->
+                <div class="p-5 border rounded-3 shadow-sm" id="pregunta-container">
+
+                    <h2 id="enunciado" class="mb-4">
+                        Enunciado de la pregunta
+                    </h2>
+
+                    <!-- Imagen opcional -->
+                    <div id="imagen-container" class="text-center mb-4">
+                        <img id="imagen-pregunta"
+                            src=""
+                            alt="Imagen asociada a la pregunta"
+                            class="img-fluid">
+                    </div>
+
+                    <!-- Alternativas -->
+                    <div id="alternativas" class="mb-4">
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                type="radio"
+                                name="respuesta"
+                                id="alternativa-1"
+                                value="0">
+                            <label class="form-check-label"
+                                for="alternativa-1">
+                                Alternativa 1
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                type="radio"
+                                name="respuesta"
+                                id="alternativa-2"
+                                value="1">
+                            <label class="form-check-label"
+                                for="alternativa-2">
+                                Alternativa 2
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                type="radio"
+                                name="respuesta"
+                                id="alternativa-3"
+                                value="2">
+                            <label class="form-check-label"
+                                for="alternativa-3">
+                                Alternativa 3
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                type="radio"
+                                name="respuesta"
+                                id="alternativa-4"
+                                value="3">
+                            <label class="form-check-label"
+                                for="alternativa-4">
+                                Alternativa 4
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                type="radio"
+                                name="respuesta"
+                                id="alternativa-5"
+                                value="3">
+                            <label class="form-check-label"
+                                for="alternativa-5">
+                                Alternativa 5
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Acción -->
+                    <div class="d-flex justify-content-end">
+                        <button id="btn-responder"
+                                type="button"
+                                class="btn btn-primary">
+                            Responder
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Resultado final -->
+                <div id="resultado" class="d-none text-center">
+
+                    <h2>Quiz finalizado</h2>
+
+                    <p id="resultado-puntaje"></p>
+                    <p id="resultado-correctas"></p>
+                    <p id="resultado-incorrectas"></p>
+
+                    <button id="btn-reiniciar"
+                            type="button"
+                            class="btn btn-primary">
+                        Intentar nuevamente
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
 </body>
 </html>
