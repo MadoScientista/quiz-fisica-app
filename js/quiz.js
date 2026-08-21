@@ -2,12 +2,13 @@
 // ESTADO DEL QUIZ
 // ========================================
 
+
 let preguntaActual = 0
 let puntaje = 0
-let tiempoRestante = 30
+let tiempoMaximo = 30
+let tiempoRestante = tiempoMaximo
 let temporizador
 let enQuiz
-const pregunta = {}
 
 
 // ========================================
@@ -22,7 +23,7 @@ const alternativas = document.getElementById("alternativas")
 const preguntaNumero = document.getElementById("pregunta-numero")
 const puntajeElemento = document.getElementById("puntaje")
 const tiempoElemento = document.getElementById("tiempo")
-const progreso = document.getElementById("progreso")
+const barraProgreso = document.getElementById("barraProgreso")
 
 const btnResponder = document.getElementById("btn-responder")
 const btnReiniciar = document.getElementById("btn-reiniciar")
@@ -50,43 +51,69 @@ function iniciarQuiz(){
 // ========================================
 
 function mostrarPregunta() {
+
     // Obtener la pregunta actual
     const pregunta = preguntas[preguntaActual]
     
     // Mostrar enunciado
-    enunciado.textContent = pregunta
+    enunciado.textContent = pregunta.enunciado
+
     
-    // Mostrar u ocultar imagen
+    if(pregunta.imagen != ""){
+        imagenPregunta.style.width = "200px"
+        imagenPregunta.style.height = "auto"
+        imagenPregunta.src = pregunta.imagen
+        imagenPregunta.classList.remove("d-none")
+    }else{
+        imagenPregunta.classList.add("d-none")
+    }
+
+    
+    // Limpiar la sección de alternativas
+    alternativas.innerHTML = ""
 
     // Generar las cuatro alternativas
-    // El formato de las alternativas es el siguiente
-    // <div class="form-check mb-2">
-    //     <input class="form-check-input"
-    //         type="radio"
-    //         name="respuesta"
-    //         id="alternativa-1"
-    //         value="0">
-    //     <label class="form-check-label"
-    //         for="alternativa-1">
-    //         Alternativa 1
-    //     </label>
-    // </div>
+    pregunta.alternativas.forEach((alternativa, indice) =>{
+        
+        const divAlternativas = document.createElement("div")
+        divAlternativas.classList.add("form-check", "mb-2")
 
+        const inputAlternativa = document.createElement("input")
+        inputAlternativa.classList.add("form-check-input")
+        inputAlternativa.type = "radio"
+        inputAlternativa.name = "respuesta"
+        inputAlternativa.id = "alternativa-" + indice
+        inputAlternativa.value = indice
 
-    // Actualizar número de pregunta
+        const labelAlternativa = document.createElement("label")
+        labelAlternativa.classList.add("form-check-label")
+        labelAlternativa.htmlFor = "alternativa-" + indice
+        labelAlternativa.textContent = alternativa
 
-    // Actualizar barra de progreso
+        divAlternativas.appendChild(inputAlternativa)
+        divAlternativas.appendChild(labelAlternativa)
+
+        alternativas.appendChild(divAlternativas)
+
+    })
+
+    actualizarQuizInfo()
 }
 
-
 // ========================================
-// OBTENER RESPUESTA
+// Actualizar quiz info
 // ========================================
 
-function obtenerRespuesta() {
-    // Buscar la alternativa seleccionada
+function actualizarQuizInfo(){
+    
+    // Actualizar número de pregunta
+    preguntaNumero.innerHTML = (preguntaActual+1) + " de " + preguntas.length
 
-    // Retornar su valor
+    // Actualizar respuesta correcta
+    puntajeElemento.innerHTML = "Correctas: " + puntaje
+    
+    // Actualizar barra de progreso
+    barraProgreso.style = `width: ${Math.round(((preguntaActual+1)/preguntas.length)*100)}%`
 }
 
 
@@ -96,10 +123,20 @@ function obtenerRespuesta() {
 
 function comprobarRespuesta() {
     // Obtener respuesta seleccionada
+    const respuesta = document.querySelector(
+        'input[name="respuesta"]:checked'
+    )
+
+    if (!respuesta) {
+        return
+    }
 
     // Comparar con la respuesta correcta
-
-    // Actualizar puntaje si corresponde
+    if(Number(respuesta.value) === preguntas[preguntaActual].correcta){
+        puntaje++
+    }
+    
+    siguientePregunta()
 }
 
 
@@ -108,11 +145,17 @@ function comprobarRespuesta() {
 // ========================================
 
 function siguientePregunta() {
+    
     // Incrementar preguntaActual
+    preguntaActual++
 
     // Comprobar si quedan preguntas
+    if(preguntaActual < preguntas.length){
+        mostrarPregunta()
+        iniciarTemporizador()
+    }else{
 
-    // Mostrar siguiente pregunta
+    }
 }
 
 
@@ -121,14 +164,28 @@ function siguientePregunta() {
 // ========================================
 
 function iniciarTemporizador() {
-    // Crear intervalo
+    
+    clearInterval(temporizador)
+    tiempoRestante = tiempoMaximo
 
-    // Disminuir tiempo cada segundo
+    tiempoElemento.textContent = tiempoRestante
 
-    // Actualizar contador
+    temporizador = setInterval(() =>{
+        tiempoRestante--
+        tiempoElemento.textContent = tiempoRestante
 
-    // Finalizar quiz cuando llegue a cero
+        if(tiempoRestante <= 0){
+
+            if(preguntaActual < preguntas.length){
+                clearInterval(temporizador)
+                siguientePregunta()
+            }else{
+                clearInterval(temporizador)
+                finalizarQuiz()
+            }
+        }}, 1000)
 }
+
 
 
 // ========================================
@@ -137,7 +194,7 @@ function iniciarTemporizador() {
 
 function finalizarQuiz() {
     // Detener temporizador
-
+    clearInterval(temporizador)
     // Ocultar pregunta
 
     // Mostrar resultado
@@ -176,5 +233,6 @@ btnReiniciar.addEventListener("click", reiniciarQuiz);
 // INICIAR QUIZ
 // ========================================
 
-mostrarPregunta();
 iniciarTemporizador();
+mostrarPregunta();
+

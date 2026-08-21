@@ -1,6 +1,6 @@
 const preguntas= [
   {
-    pregunta: "¿Qué significa MRU?",
+    enunciado: "¿Qué significa MRU?",
     alternativas: [
       "Movimiento Rectilíneo Uniforme",
       "Movimiento Rotacional Uniforme",
@@ -8,10 +8,11 @@ const preguntas= [
       "Movimiento Rápido Uniforme",
       "Movimiento Recto Variable"
     ],
-    correcta: 0
+    correcta: 0,
+    imagen:"https://img.magnific.com/vector-gratis/hombre-corriendo-icono-vectorial-dibujos-animados-ilustracion-gente-icono-deportivo-vector-plano-aislado_138676-13746.jpg?semt=ais_hybrid&w=740&q=80"
   },
   {
-    pregunta: "¿Cuál es una característica fundamental del MRU?",
+    enunciado: "¿Cuál es una característica fundamental del MRU?",
     alternativas: [
       "La velocidad cambia constantemente",
       "La trayectoria es circular",
@@ -19,10 +20,11 @@ const preguntas= [
       "La aceleración aumenta con el tiempo",
       "El objeto siempre está detenido"
     ],
-    correcta: 2
+    correcta: 2,
+    imagen:""
   },
   {
-    pregunta: "¿Cuál es la fórmula para calcular la distancia recorrida en un MRU?",
+    enunciado: "¿Cuál es la fórmula para calcular la distancia recorrida en un MRU?",
     alternativas: [
       "d = v / t",
       "d = v · t",
@@ -30,10 +32,11 @@ const preguntas= [
       "d = v + t",
       "d = v - t"
     ],
-    correcta: 1
+    correcta: 1,
+    imagen:""
   },
   {
-    pregunta: "Un automóvil se mueve a 20 m/s durante 5 segundos en línea recta. ¿Qué distancia recorre?",
+    enunciado: "Un automóvil se mueve a 20 m/s durante 5 segundos en línea recta. ¿Qué distancia recorre?",
     alternativas: [
       "4 m",
       "25 m",
@@ -41,10 +44,11 @@ const preguntas= [
       "100 m",
       "200 m"
     ],
-    correcta: 3
+    correcta: 3,
+    imagen:""
   },
   {
-    pregunta: "En un MRU, ¿cuál es el valor de la aceleración?",
+    enunciado: "En un MRU, ¿cuál es el valor de la aceleración?",
     alternativas: [
       "0 m/s²",
       "1 m/s²",
@@ -52,6 +56,7 @@ const preguntas= [
       "Depende de la velocidad",
       "Siempre es negativa"
     ],
-    correcta: 0
+    correcta: 0,
+    imagen:""
   }
 ];

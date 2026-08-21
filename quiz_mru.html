@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 
     <title>Física Quiz</title>
 </head>
@@ -20,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,18 +49,16 @@
 
     <!-- Main -->
     <main class="container-fluid p-5">
-        <div class="text-center">
-            <div class="h1">Quiz MRU</div>
-            <p>Quiz sobre cuerpos en movimiento con velocidad constante</p>
-        </div>
         
-
         <!--Quiz-->
-        <div class="container mt-5">
-            <!-- Quiz -->
-            <div id="quiz" class="container">
+        <div class="d-flex flex-column flex-lg-row gap-3 mt-4">
 
-                <!-- Información del quiz -->
+            <!-- Info Quiz -->
+            <div class="container border p-5 shadow-sm info-quiz">
+                <div class="h1 mb-4">Quiz MRU</div>
+                <p>Preguntas sobre cuerpos en movimiento con velocidad constante</p>
+
+                <!-- Info preguntas -->
                 <div class="d-flex justify-content-between align-items-center mb-1">
                     <span id="pregunta-numero">Pregunta 1 de 5</span>
                     <span id="puntaje">Puntaje: 0</span>
@@ -67,8 +67,14 @@
                 
                 <!-- Barra de progreso -->
                 <div class="progress mb-4" role="progressbar" aria-label="Progreso del quiz">
-                    <div id="progreso" class="progress-bar" style="width: 20%"></div>
+                    <div id="barraProgreso" class="progress-bar" style="width: 20%"></div>
                 </div>
+            </div>
+
+            <!-- Tarjeta de preguntas -->
+            <div id="quiz" class="container quiz">
+
+
 
                 <!-- Pregunta -->
                 <div class="p-5 border rounded-3 shadow-sm" id="pregunta-container">
@@ -87,66 +93,6 @@
 
                     <!-- Alternativas -->
                     <div id="alternativas" class="mb-4">
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input"
-                                type="radio"
-                                name="respuesta"
-                                id="alternativa-1"
-                                value="0">
-                            <label class="form-check-label"
-                                for="alternativa-1">
-                                Alternativa 1
-                            </label>
-                        </div>
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input"
-                                type="radio"
-                                name="respuesta"
-                                id="alternativa-2"
-                                value="1">
-                            <label class="form-check-label"
-                                for="alternativa-2">
-                                Alternativa 2
-                            </label>
-                        </div>
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input"
-                                type="radio"
-                                name="respuesta"
-                                id="alternativa-3"
-                                value="2">
-                            <label class="form-check-label"
-                                for="alternativa-3">
-                                Alternativa 3
-                            </label>
-                        </div>
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input"
-                                type="radio"
-                                name="respuesta"
-                                id="alternativa-4"
-                                value="3">
-                            <label class="form-check-label"
-                                for="alternativa-4">
-                                Alternativa 4
-                            </label>
-                        </div>
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input"
-                                type="radio"
-                                name="respuesta"
-                                id="alternativa-5"
-                                value="3">
-                            <label class="form-check-label"
-                                for="alternativa-5">
-                                Alternativa 5
-                            </label>
-                        </div>
 
                     </div>
 
@@ -179,7 +125,13 @@
                 </div>
 
             </div>
+
         </div>
+
     </main>
+
+    <!--JavaScript-->
+    <script src="./js/preguntasMRU.js"></script>
+    <script src="./js/quiz.js"></script>
 </body>
 </html>

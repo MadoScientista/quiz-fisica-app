@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <title>Física Quiz</title>
@@ -19,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,5 +44,93 @@
             </div>
         </div>
     </nav>
+
+    <!-- Main -->
+    <main class="container-fluid p-5">
+        
+        <!--Quiz-->
+        <div class="d-flex flex-column flex-lg-row gap-3 mt-4">
+
+            <!-- Info Quiz -->
+            <div class="container border p-5 shadow-sm info-quiz">
+                <div class="h1 mb-4">Quiz Fuerza</div>
+                <p>Preguntas sobre los tres principios de Newton</p>
+
+                <!-- Info preguntas -->
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span id="pregunta-numero">Pregunta 1 de 5</span>
+                    <span id="puntaje">Puntaje: 0</span>
+                    <span id="tiempo">Tiempo: 30 s</span>
+                </div>
+                
+                <!-- Barra de progreso -->
+                <div class="progress mb-4" role="progressbar" aria-label="Progreso del quiz">
+                    <div id="barraProgreso" class="progress-bar" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de preguntas -->
+            <div id="quiz" class="container quiz">
+
+
+
+                <!-- Pregunta -->
+                <div class="p-5 border rounded-3 shadow-sm" id="pregunta-container">
+
+                    <h2 id="enunciado" class="mb-4">
+                        Enunciado de la pregunta
+                    </h2>
+
+                    <!-- Imagen opcional -->
+                    <div id="imagen-container" class="text-center mb-4">
+                        <img id="imagen-pregunta"
+                            src=""
+                            alt="Imagen asociada a la pregunta"
+                            class="img-fluid">
+                    </div>
+
+                    <!-- Alternativas -->
+                    <div id="alternativas" class="mb-4">
+
+                    </div>
+
+                    <!-- Acción -->
+                    <div class="d-flex justify-content-end">
+                        <button id="btn-responder"
+                                type="button"
+                                class="btn btn-primary">
+                            Responder
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Resultado final -->
+                <div id="resultado" class="d-none text-center">
+
+                    <h2>Quiz finalizado</h2>
+
+                    <p id="resultado-puntaje"></p>
+                    <p id="resultado-correctas"></p>
+                    <p id="resultado-incorrectas"></p>
+
+                    <button id="btn-reiniciar"
+                            type="button"
+                            class="btn btn-primary">
+                        Intentar nuevamente
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+    </main>
+        
+    <!--JavaScript-->
+    <script src="./js/preguntasMRU.js"></script>
+    <script src="./js/quiz.js"></script>
+    
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <title>Física Quiz</title>
@@ -20,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,7 +32,7 @@
                         <li><a class="dropdown-item" href="quiz_mruv.html">MRUV</a></li>
                         <li><a class="dropdown-item" href="quiz_fuerza.html">Fuerza</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Todos</a></li>
+                        <li><a class="dropdown-item" href="lista_quiz.html">Todos</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -46,45 +47,48 @@
     </nav>
 
     <main class="container mt-5">
-        <!-- Título de la sección -->
-        <div class="container mb-5">
-            <div class="h2 mb-4">Contáctanos </div>
-            <p>Si detectas errores en alguna preguntas, errores en contador de puntos, otros problemas o simplemente quieres agradecer nuestro trabajo, no dudes en enviarnos un mensaje.</p>
+        
+        <div class="d-flex flex-column flex-lg-row align-items-center w-75">
+            <!-- Título de la sección -->
+            <div class="container mb-5 info-contacto">
+                <div class="h2 mb-4">Contáctanos</div>
+                <p>Si detectas errores en alguna preguntas, errores en contador de puntos, otros problemas o simplemente quieres agradecer nuestro trabajo, no dudes en enviarnos un mensaje.</p>
+            </div>
+
+            <!-- Formulario -->
+            <div class="container border rounded shadow-sm p-5 w-50 mb-5 formulario-contacto">
+                <div class="h4 mb-4">Formulario de contacto</div>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombreUsuario" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingresa nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="correoUsuario" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id ="correoUsuario" placeholder="Ingresa correo" aria-describedby="emailHelp" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="motivoUsuario" class="form-label">Motivo</label>
+                        <select class="form-select" aria-label="Default select example" id="motivoUsuario" required>
+                            <option value="1">Error en pregunta</option>
+                            <option value="2">Error en funcionamiento de un Quiz</option>
+                            <option value="2">Gracias</option>
+                            <option value="3">Otro</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                        <textarea class="form-control mb-4" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Enviar</button>
+                </form>
+
+            </div>
         </div>
-        
-        <!-- Formulario -->
-         <div class="container w-75 border p-5 rounded">
-            <div class="h4 mb-4">Formulario de contacto</div>
-            <form>
-            <div class="mb-3">
-                <label for="nombreUsuario" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingresa nombre">
-            </div>
-            <div class="mb-3">
-                <label for="correoUsuario" class="form-label">Correo</label>
-                <input type="email" class="form-control" id ="correoUsuario" placeholder="Ingresa correo" aria-describedby="emailHelp" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="motivoUsuario" class="form-label">Motivo</label>
-                <select class="form-select" aria-label="Default select example" id="motivoUsuario" required>
-                    <option value="1">Error en pregunta</option>
-                    <option value="2">Error en funcionamiento de un Quiz</option>
-                    <option value="2">Gracias</option>
-                    <option value="3">Otro</option>
-                </select>
-            </div>
-            
-
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                <textarea class="form-control mb-4" id="exampleFormControlTextarea1" rows="3" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-dark">Enviar</button>
-        </form>
-         </div>
-        
 
     </main>
 </body>
