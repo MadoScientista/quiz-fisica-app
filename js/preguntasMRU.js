@@ -1,62 +1,57 @@
 const preguntas= [
   {
-    enunciado: "¿Qué significa MRU?",
+    enunciado: "¿En qué posición se encontrará la persona luego de 10 s?",
     alternativas: [
-      "Movimiento Rectilíneo Uniforme",
-      "Movimiento Rotacional Uniforme",
-      "Movimiento Rectilíneo Uniformado",
-      "Movimiento Rápido Uniforme",
-      "Movimiento Recto Variable"
-    ],
-    correcta: 0,
-    imagen:"https://img.magnific.com/vector-gratis/hombre-corriendo-icono-vectorial-dibujos-animados-ilustracion-gente-icono-deportivo-vector-plano-aislado_138676-13746.jpg?semt=ais_hybrid&w=740&q=80"
-  },
-  {
-    enunciado: "¿Cuál es una característica fundamental del MRU?",
-    alternativas: [
-      "La velocidad cambia constantemente",
-      "La trayectoria es circular",
-      "La velocidad es constante",
-      "La aceleración aumenta con el tiempo",
-      "El objeto siempre está detenido"
-    ],
-    correcta: 2,
-    imagen:""
-  },
-  {
-    enunciado: "¿Cuál es la fórmula para calcular la distancia recorrida en un MRU?",
-    alternativas: [
-      "d = v / t",
-      "d = v · t",
-      "d = t / v",
-      "d = v + t",
-      "d = v - t"
-    ],
-    correcta: 1,
-    imagen:""
-  },
-  {
-    enunciado: "Un automóvil se mueve a 20 m/s durante 5 segundos en línea recta. ¿Qué distancia recorre?",
-    alternativas: [
-      "4 m",
-      "25 m",
-      "50 m",
+      "20 m",
+      "60 m",
       "100 m",
       "200 m"
     ],
-    correcta: 3,
-    imagen:""
+    correcta: 2,
+    imagen:"./img/mru-pregunta-1.png"
   },
   {
-    enunciado: "En un MRU, ¿cuál es el valor de la aceleración?",
+    enunciado: "¿A qué distancia del origen se encontrará la corredora luego de 5 s?",
     alternativas: [
-      "0 m/s²",
-      "1 m/s²",
-      "9,8 m/s²",
-      "Depende de la velocidad",
-      "Siempre es negativa"
+      "25 m",
+      "45 m",
+      "75 m",
+      "100 m"
+    ],
+    correcta: 1,
+    imagen:"./img/mru-pregunta-2.png"
+  },
+  {
+    enunciado: "¿A qué velocidad caminan si tardan 12 s en llegar a la posición xf?",
+    alternativas: [
+      "-4 m/s",
+      "-2 m/s",
+      "2 m/s",
+      "4 m/s"
+    ],
+    correcta: 1,
+    imagen:"./img/mru-pregunta-3.png"
+  },
+  {
+    enunciado: "¿Qué distancia recorrió la persona para llegar desde xi hasta xf?",
+    alternativas: [
+      "-20 m",
+      "-10 m",
+      "10 m",
+      "30 m"
+    ],
+    correcta: 3,
+    imagen:"./img/mru-pregunta-4.png"
+  },
+  {
+    enunciado: "¿Qué velocidad tiene el ciclista cuando llega a xf?",
+    alternativas: [
+      "6 m/s",
+      "12 m/s",
+      "18 m/s",
+      "24 m/s"
     ],
     correcta: 0,
-    imagen:""
+    imagen:"./img/mru-pregunta-5.png"
   }
 ];

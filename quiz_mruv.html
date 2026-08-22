@@ -12,6 +12,7 @@
 </head>
 <body>
 
+    <!--NavBar-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Física Quiz</a>
@@ -31,8 +32,6 @@
                         <li><a class="dropdown-item" href="quiz_mru.html">MRU</a></li>
                         <li><a class="dropdown-item" href="quiz_mruv.html">MRUV</a></li>
                         <li><a class="dropdown-item" href="quiz_fuerza.html">Fuerza</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="lista_quiz.html">Todos</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -50,31 +49,48 @@
     <main class="container-fluid p-5">
         
         <!--Quiz-->
-        <div class="d-flex flex-column flex-lg-row gap-3 mt-4">
-
-            <!-- Info Quiz -->
-            <div class="container border p-5 shadow-sm info-quiz">
-                <div class="h1 mb-4">Quiz MRUV</div>
-                <p>Preguntas sobre cuerpos en movimiento con aceleración constante</p>
-
-                <!-- Info preguntas -->
-                <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span id="pregunta-numero">Pregunta 1 de 5</span>
-                    <span id="puntaje">Puntaje: 0</span>
-                    <span id="tiempo">Tiempo: 30 s</span>
-                </div>
-                
-                <!-- Barra de progreso -->
-                <div class="progress mb-4" role="progressbar" aria-label="Progreso del quiz">
-                    <div id="barraProgreso" class="progress-bar" style="width: 20%"></div>
-                </div>
-            </div>
+        <div class="d-flex flex-column flex-lg-row gap-3 align-items-center quiz-container">
 
             <!-- Tarjeta de preguntas -->
-            <div id="quiz" class="container quiz">
+            <div class="container quiz">
+
+                <!-- Info Quiz -->
+                <div id="quiz-info" class="container ">
+                    <div class="h1 mb-4 text-center">Quiz MRUV</div>
+
+                    <!-- Info preguntas -->
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span id="pregunta-numero">Pregunta 1 de 5</span>
+                        <span id="puntaje">Puntaje: 0</span>
+                        <span id="tiempo">Tiempo: 30 s</span>
+                    </div>
+                    
+                    <!-- Barra de progreso -->
+                    <div class="progress mb-4" role="progressbar" aria-label="Progreso del quiz">
+                        <div id="barraProgreso" class="progress-bar bg-dark" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <!--Inicio quiz-->
+                <div id="inicio-quiz-container" class="gap-3 p-5 border rounded-3 shadow-sm">
+                    
+                    <div class="h2 mb-5 text-center">Movimiento Rectilíneo Uniformemente Variado</div>
+
+                    <div class="d-flex mb-5 gap-5">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GBhEKs7JSdKkKJ7WWEWZHWj-s7BUlN38EJGVzrtPLCztqmrYFtPXtXOu&s=10" width="600" alt="Personas_levantando_barras">
+                        
+                        <div class="container mt-5">
+                            <p>5 Preguntas de alternativas donde solo una de ellas es correcta</p>
+                            <button id="btn-iniciar" type="button" class="btn btn-dark">
+                                Comenzar
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
 
                 <!-- Pregunta -->
-                <div class="p-5 border rounded-3 shadow-sm" id="pregunta-container">
+                <div id="pregunta-container" class="p-5 border rounded-3 shadow-sm d-none" >
 
                     <h2 id="enunciado" class="mb-4">
                         Enunciado de la pregunta
@@ -89,40 +105,86 @@
                     </div>
 
                     <!-- Alternativas -->
-                    <div id="alternativas" class="mb-4">
+                    <div id="alternativas" class="container mb-4">
+                          <div class="row mb-3">
+                            <div class="col" >
+                                <input class="alternativa-check"
+                                    type="radio"
+                                    name="respuesta"
+                                    id="alternativa-0"
+                                    value="0">
+                                <label class="alternativa-tarjeta"
+                                    for="alternativa-0"
+                                    id="label-alternativa-0">
+                                    1. Alternativa
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input class="alternativa-check"
+                                    type="radio"
+                                    name="respuesta"
+                                    id="alternativa-1"
+                                    value="1">
+                                <label class="alternativa-tarjeta"
+                                    for="alternativa-1"
+                                    id="label-alternativa-1">
+                                    2. Alternativa
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                            <input class="alternativa-check"
+                                    type="radio"
+                                    name="respuesta"
+                                    id="alternativa-2"
+                                    value="2">
+                                <label class="alternativa-tarjeta"
+                                    for="alternativa-2"
+                                    id="label-alternativa-2">
+                                    3. Alternativa
+                                </label>
+                            </div>
+                            <div class="col">
+                            <input class="alternativa-check"
+                                    type="radio"
+                                    name="respuesta"
+                                    id="alternativa-3"
+                                    value="3">
+                                <label class="alternativa-tarjeta"
+                                    for="alternativa-3"
+                                    id="label-alternativa-3">
+                                    4. Alternativa
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Acción -->
+                        <div class="d-flex justify-content-end">
+                            <button id="btn-responder"
+                                    type="button"
+                                    class="btn btn-dark">
+                                Responder
+                            </button>
+                        </div>
 
                     </div>
-
-                    <!-- Acción -->
-                    <div class="d-flex justify-content-end">
-                        <button id="btn-responder"
-                                type="button"
-                                class="btn btn-primary">
-                            Responder
-                        </button>
-                    </div>
-
                 </div>
 
-                <!-- Resultado final -->
-                <div id="resultado" class="d-none text-center">
+                <!-- Resultado del quiz -->
+                <div id="resultado-container" class="p-5 border rounded-3 shadow-sm d-none">
 
-                    <h2>Quiz finalizado</h2>
+                    <div id="titulo" class="h2">Resultado</div>
 
                     <p id="resultado-puntaje"></p>
                     <p id="resultado-correctas"></p>
                     <p id="resultado-incorrectas"></p>
 
-                    <button id="btn-reiniciar"
-                            type="button"
-                            class="btn btn-primary">
-                        Intentar nuevamente
+                    <button id="btn-reiniciar" type="button" class="btn btn-dark">
+                        Reiniciar
                     </button>
-
-                </div>
-
+                </div>          
             </div>
-
         </div>
         
     </main>

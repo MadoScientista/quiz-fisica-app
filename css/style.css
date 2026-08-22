@@ -1,6 +1,21 @@
+.tarjeta-inicio{
+    width: 20rem;
+    min-height: 25rem;
+}
+
+.tarjeta-inicio:hover{
+    border-color: #373e46;
+    transform: translateY(-2px);
+}
+
 .quiz{
-    max-width: 890px;
+    max-width: 1000px;
     min-width: 600px;
+}
+
+.quiz-container{
+    max-width: 1440px;
+    margin: auto;
 }
 
 .info-quiz{
@@ -13,6 +28,46 @@
     max-width: 360px;
 }
 
-.formulario-contacto{
-    margin-top: 50px;
+
+
+/* Ocultar el radio button nativo */
+.alternativa-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Aplicar la clase a TODAS las alternativas */
+.alternativa-tarjeta {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 20px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    font-size: 1.25rem;
+}
+
+/* Hover en cualquier tarjeta */
+.alternativa-tarjeta:hover {
+    border-color: #212529;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); */
+}
+
+/* Cuando el input con clase .opcion-check esté marcado, 
+   cambia el estilo de la tarjeta (.opcion-tarjeta) que tiene al lado */
+.alternativa-check:checked + .alternativa-tarjeta {
+    background-color: #212529;
+    border-color: #212529;
+    color: #ffffff;
+    font-weight: 600;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
 }
