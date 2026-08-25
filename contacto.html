@@ -14,7 +14,7 @@
     <!--NavBar-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Física Quiz</a>
+            <a class="navbar-brand ms-5" href="index.html">Física Quiz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="quiz_mru.html">MRU</a></li>
-                        <li><a class="dropdown-item" href="quiz_mruv.html">MRUV</a></li>
+                        <li><a class="dropdown-item" href="quiz_universo.html">Universo</a></li>
                         <li><a class="dropdown-item" href="quiz_fuerza.html">Fuerza</a></li>
                     </ul>
                 </li>
@@ -43,18 +43,16 @@
             </div>
         </div>
     </nav>
+    
+    <main class="container justify-content-center mt-5">
 
-    <main class="container mt-5 p-5">
-        
-        <div class="d-flex flex-column flex-lg-row align-items-center w-75">
-            <!-- Título de la sección -->
-            <div class="container mb-5 info-contacto">
-                <div class="h2 mb-4">Contáctanos</div>
-                <p>Si detectas errores en alguna preguntas, errores en contador de puntos, otros problemas o simplemente quieres agradecer nuestro trabajo, no dudes en enviarnos un mensaje.</p>
+            <div class="container mb-5 text-center">
+                <div class="h1 mb-4">Contáctanos</div>
+                <p class="info-contacto text-body-secondary lead">Si detectas errores en alguna preguntas, errores en contador de puntos, otros problemas o simplemente quieres agradecer nuestro trabajo, no dudes en enviarnos un mensaje.</p>
             </div>
 
             <!-- Formulario -->
-            <div class="container border rounded shadow-sm p-5 w-50 mb-5 formularioContacto">
+            <div class="container border rounded shadow-sm p-5 mb-5 formulario-contacto">
                 <div class="h4 mb-4">Formulario de contacto</div>
                 <form id="formularioContacto">
                     <div class="mb-3">
@@ -84,7 +82,15 @@
                     <button id = "btn-contacto" type="submit" class="btn btn-dark">Enviar</button>
                 </form>
             </div>
-        </div>
+
+            <div id="formulario-enviado-contenedor" class="d-none container">
+                <p>Formulario enviado</p>
+                <p>Nombre: <span id="nombre-enviado"></span></p>
+                <p>Correo: <span id="correo-enviado"></span></p>
+                <p>Asunto: <span id="motivo-enviado"></span></p>
+                <p>Mensaje: <span id="mensaje-enviado"></span></p>
+            </div>
+        
     </main>
 
     <script src="js/formulario.js"></script>
