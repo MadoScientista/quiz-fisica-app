@@ -3,7 +3,7 @@
 // ========================================
 
 
-let preguntaActual = 0
+let preguntaActual = -1
 let puntaje = 0
 let correctas = 0
 let tiempoMaximo = 30
@@ -15,6 +15,9 @@ let enQuiz
 // ========================================
 // ELEMENTOS DEL DOM
 // ========================================
+
+// Elementos descripción del quiz
+const descripcionQuiz = document.getElementById("descripcion-quiz")
 
 // Elementos quiz
 const preguntaContainer = document.getElementById("pregunta-container")
@@ -42,6 +45,12 @@ const resultadoIncorrectas = document.getElementById("resultado-incorrectas")
 const btnReiniciar = document.getElementById("btn-reiniciar")
 
 
+
+// Descripción del quiz
+function actualizarDescripciónQuiz(){
+    descripcionQuiz.textContent = preguntas.length + " Preguntas de alternativas donde solo una de ellas es correcta"
+}
+
 // Iniciar quiz
 function iniciarQuiz(){
 
@@ -53,6 +62,7 @@ function iniciarQuiz(){
     resultadoContainer.classList.add("d-none")
     preguntaContainer.classList.remove("d-none")
 
+    actualizarQuizInfo()
     iniciarTemporizador()
     mostrarPregunta()
     
@@ -99,8 +109,6 @@ function mostrarPregunta() {
 
     
     if(pregunta.imagen != ""){
-        // imagenPregunta.style.width = "200px"
-        // imagenPregunta.style.height = "auto"
         imagenPregunta.src = pregunta.imagen
         imagenPregunta.classList.remove("d-none")
     }else{
@@ -115,8 +123,6 @@ function mostrarPregunta() {
         document.getElementById("label-alternativa-" + indice).textContent = alternativa
 
     })
-
-    actualizarQuizInfo()
 }
 
 // Actualizar tarjeta info quiz
@@ -126,7 +132,7 @@ function actualizarQuizInfo(){
     preguntaNumero.innerHTML = (preguntaActual+1) + " de " + preguntas.length
 
     // Actualizar respuesta correcta
-    puntajeElemento.innerHTML = "Correctas: " + puntaje
+    puntajeElemento.innerHTML = "puntaje: " + puntaje
     
     // Actualizar barra de progreso
     barraProgreso.style = `width: ${Math.round(((preguntaActual+1)/preguntas.length)*100)}%`
@@ -149,6 +155,7 @@ function comprobarRespuesta() {
         correctas++
     }
     
+    
     siguientePregunta()
 }
 
@@ -157,12 +164,14 @@ function siguientePregunta() {
     
     // Incrementar preguntaActual
     preguntaActual++
-
+    
     // Comprobar si quedan preguntas
     if(preguntaActual < preguntas.length){
+        actualizarQuizInfo()
         mostrarPregunta()
         iniciarTemporizador()
     }else{
+
         finalizarQuiz()
     }
 }
@@ -194,3 +203,5 @@ btnIniciar.addEventListener("click", iniciarQuiz)
 btnReiniciar.addEventListener("click", iniciarQuiz)
 
 
+actualizarDescripciónQuiz()
+actualizarQuizInfo()

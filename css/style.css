@@ -25,10 +25,13 @@
 }
 
 .info-contacto{
-    max-width: 360px;
+    max-width: 600px;
+    margin:auto
 }
 
-
+.formulario-contacto{
+    max-width: 560px;
+}
 
 /* Ocultar el radio button nativo */
 .alternativa-check {
@@ -59,7 +62,6 @@
     border-color: #212529;
     background-color: #f8f9fa;
     transform: translateY(-2px);
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); */
 }
 
 /* Cuando el input con clase .opcion-check esté marcado, 
@@ -69,5 +71,9 @@
     border-color: #212529;
     color: #ffffff;
     font-weight: 600;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
+}
+
+.foto{
+    max-width: 400px;
+    margin-bottom: 3rem;
 }

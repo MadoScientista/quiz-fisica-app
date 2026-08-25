@@ -15,7 +15,7 @@
     <!--NavBar-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Física Quiz</a>
+            <a class="navbar-brand ms-5" href="index.html">Física Quiz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,7 +30,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="quiz_mru.html">MRU</a></li>
-                        <li><a class="dropdown-item" href="quiz_mruv.html">MRUV</a></li>
+                        <li><a class="dropdown-item" href="quiz_universo.html">Universo</a></li>
                         <li><a class="dropdown-item" href="quiz_fuerza.html">Fuerza</a></li>
                     </ul>
                 </li>
@@ -56,7 +56,7 @@
 
                 <!-- Info Quiz -->
                 <div id="quiz-info" class="container ">
-                    <div class="h1 mb-4 text-center">Quiz MRUV</div>
+                    <div class="h1 mb-4 text-center">Quiz Universo</div>
 
                     <!-- Info preguntas -->
                     <div class="d-flex justify-content-between align-items-center mb-1">
@@ -74,13 +74,13 @@
                 <!--Inicio quiz-->
                 <div id="inicio-quiz-container" class="gap-3 p-5 border rounded-3 shadow-sm">
                     
-                    <div class="h2 mb-5 text-center">Movimiento Rectilíneo Uniformemente Variado</div>
+                    <div class="h2 mb-5 text-center">Universo</div>
 
                     <div class="d-flex mb-5 gap-5">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GBhEKs7JSdKkKJ7WWEWZHWj-s7BUlN38EJGVzrtPLCztqmrYFtPXtXOu&s=10" width="600" alt="Personas_levantando_barras">
                         
                         <div class="container mt-5">
-                            <p>5 Preguntas de alternativas donde solo una de ellas es correcta</p>
+                            <p id="descripcion-quiz">5 Preguntas de alternativas donde solo una de ellas es correcta</p>
                             <button id="btn-iniciar" type="button" class="btn btn-dark">
                                 Comenzar
                             </button>
@@ -190,7 +190,7 @@
     </main>
 
     <!--JavaScript-->
-    <script src="./js/preguntasMRU.js"></script>
+    <script src="./js/preguntasUniverso.js"></script>
     <script src="./js/quiz.js"></script>
 
 </body>
