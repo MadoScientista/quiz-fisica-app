@@ -186,7 +186,7 @@ function finalizarQuiz() {
 
     resultadoPuntaje.textContent = "Puntaje: " + puntaje
     resultadoCorrectas.textContent = "Correctas: " + correctas
-    resultadoIncorrectas.textContent = "Correctas: " + (preguntas.length - correctas)
+    resultadoIncorrectas.textContent = "Incorrectas: " + (preguntas.length - correctas)
     
 
     if(correctas == preguntas.length){
