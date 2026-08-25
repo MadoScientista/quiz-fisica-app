@@ -181,21 +181,26 @@
                 <!-- Resultado del quiz -->
                 <div id="resultado-container" class="p-5 border rounded-3 shadow-sm d-none">
 
-                    <div id="titulo" class="h2">Resultado</div>
-
-                    <p id="resultado-puntaje"></p>
-                    <p id="resultado-correctas"></p>
-                    <p id="resultado-incorrectas"></p>
+                    <div id="titulo" class="h2 mb-3">Resultado</div>
+                    <hr>
+                    <p id="resultado-incorrectas" class="text-body-secondary resultado"></p>
+                    <p id="resultado-correctas" class="text-body-secondary resultado"></p>
+                    <p id="resultado-tiempo-utilizado" class="text-body-secondary resultado"></p>
+                    <hr>
+                    <p id="resultado-puntaje" class="text-body-secondary resultado"></p>
 
                     <button id="btn-reiniciar" type="button" class="btn btn-dark">
                         Reiniciar
                     </button>
-                </div>          
+                </div>            
             </div>
         </div>
         
     </main>
-        
+    
+    <footer class="d-lg-flex bg-dark">
+    </footer>
+
     <!--JavaScript-->
     <script src="./js/preguntasFureza.js"></script>
     <script src="./js/quiz.js"></script>

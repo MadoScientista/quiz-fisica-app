@@ -9,8 +9,7 @@ let correctas = 0
 let tiempoMaximo = 30
 let tiempoRestante = tiempoMaximo
 let temporizador
-let enQuiz
-
+let tiempoUtilizado = 0
 
 // ========================================
 // ELEMENTOS DEL DOM
@@ -42,6 +41,7 @@ const resultadoContainer = document.getElementById("resultado-container")
 const resultadoPuntaje = document.getElementById("resultado-puntaje")
 const resultadoCorrectas = document.getElementById("resultado-correctas")
 const resultadoIncorrectas = document.getElementById("resultado-incorrectas")
+const resultadoTiempoUtilizado = document.getElementById("resultado-tiempo-utilizado")
 const btnReiniciar = document.getElementById("btn-reiniciar")
 
 
@@ -56,6 +56,7 @@ function iniciarQuiz(){
 
     preguntaActual = 0
     puntaje = 0
+    tiempoUtilizado = 0
     tiempoRestante = tiempoMaximo
 
     inicioQuizContainer.classList.add("d-none")
@@ -89,7 +90,9 @@ function iniciarTemporizador() {
                 clearInterval(temporizador)
                 finalizarQuiz()
             }
-        }}, 1000)
+        }
+    tiempoUtilizado++
+    }, 1000)
 }
 
 // Mostrar preguntas
@@ -187,6 +190,7 @@ function finalizarQuiz() {
     resultadoPuntaje.textContent = "Puntaje: " + puntaje
     resultadoCorrectas.textContent = "Correctas: " + correctas
     resultadoIncorrectas.textContent = "Incorrectas: " + (preguntas.length - correctas)
+    resultadoTiempoUtilizado.textContent = "Tiempo utilizado: " + tiempoUtilizado + " segundos"
     
 
     if(correctas == preguntas.length){

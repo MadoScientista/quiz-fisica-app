@@ -91,16 +91,33 @@
                 </form>
             </div>
 
-            <div id="formulario-enviado-contenedor" class="d-none container">
-                <p>Formulario enviado</p>
-                <p>Nombre: <span id="nombre-enviado"></span></p>
-                <p>Correo: <span id="correo-enviado"></span></p>
-                <p>Asunto: <span id="motivo-enviado"></span></p>
-                <p>Mensaje: <span id="mensaje-enviado"></span></p>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Mensaje Enviado</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Nombre: <span id="nombre-enviado"></span></p>
+                        <p>Correo: <span id="correo-enviado"></span></p>
+                        <p>Asunto: <span id="motivo-enviado"></span></p>
+                        <p>Mensaje: <span id="mensaje-enviado"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
             </div>
         
     </main>
 
+    <footer class="d-lg-flex bg-dark">
+    </footer>
+    
     <script src="js/formulario.js"></script>
 </body>
 </html>

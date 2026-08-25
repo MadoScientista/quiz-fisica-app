@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  display: grid;
+  min-height: 100vh;
+}
+
 .tarjeta-inicio{
     width: 20rem;
     min-height: 25rem;
@@ -76,4 +82,18 @@
 .foto{
     max-width: 400px;
     margin-bottom: 3rem;
+}
+
+.resultado{
+    font-size: 1.5rem;
+}
+
+footer{
+    min-height: 200px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.texto-footer{
+    color: white;
 }
